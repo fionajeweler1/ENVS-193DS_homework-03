@@ -4,3 +4,9 @@ format: html
 ---
 
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
+
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+
