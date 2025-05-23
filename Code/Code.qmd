@@ -3,10 +3,16 @@ title: "Code"
 format: html
 ---
 
+Part 1: Set Up Tasks
+
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
 
 library(tidyverse)
 library(here)
 library(gt)
 library(janitor)
+
+Part 2: Problems 
+
+a. To compare how quickly I fall asleep on days when I meet my recommended activity goal versus when I do not, I will calculate the mean time to fall asleep for each group ("Yes" vs. "No" under "Meet daily recommended activity goal"). This allows me to compare average sleep onset times between more and less active days. Comparing means is informative because if there is a noticeable difference, it could suggest a relationship between physical activity levels and how quickly I fall asleep.
 
