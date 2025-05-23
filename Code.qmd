@@ -1,0 +1,89 @@
+---
+title: "ENVS 193DS Homework 3"
+format:
+  html:
+    output-file: index.html
+    embed-resources: true
+output-dir: ../
+---
+
+Part 1: Set Up Tasks
+
+[Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
+
+```{r}
+library(tidyverse)
+library(here)
+library(gt)
+library(janitor)
+library(readr)
+```
+
+
+Part 2: Problems 
+
+a. To compare how quickly I fall asleep on days when I meet my recommended activity goal versus when I do not, I will calculate the mean time to fall asleep for each group ("Yes" vs. "No" under "Meet daily recommended activity goal"). This allows me to compare average sleep onset times between more and less active days. Comparing means is informative because if there is a noticeable difference, it could suggest a relationship between physical activity levels and how quickly I fall asleep.
+
+b. 
+```{r}
+# Reading in data
+data <- read_csv(here("data","Datasheet.csv"), col_names = TRUE)
+data <- read_csv(here("data","Datasheet.csv"), skip = 1)
+data <- read_csv(here("data","Datasheet.csv"), skip = 1) |> 
+  select(-1)
+
+colnames(data)
+#Clean column names
+data <- janitor::clean_names(data)
+
+#Renaming column names 
+data <- data %>%
+  rename(
+    time_to_sleep = time_to_fall_asleep_minutes,
+    met_goal = meet_daily_recommended_activity_goal
+  )
+
+# Creating plot 
+ggplot(data, aes(x = met_goal, y = time_to_sleep, color = met_goal)) +
+  geom_jitter(width = 0.15, size = 2, alpha = 0.8) +
+  stat_summary(fun = mean, geom = "crossbar", width = 0.5,
+               color = "black", fatten = 3, size = 0.6,
+               aes(ymin = after_stat(y), ymax = after_stat(y))) +  # updated for deprecation
+  scale_color_manual(values = c("Yes" = "#3B9AB2", "No" = "#F21A00")) +
+  labs(
+    x = "Met Daily Recommended Activity Goal",
+    y = "Time to Fall Asleep (minutes)",
+    title = "Time to Fall Asleep by Activity Goal Status"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none")
+
+```
+
+c. 
+Figure 1. Faster sleep onset tends to occur on days when activity goals are met. Each red or blue dot represents a single day, with the red circles showing days when the activity goal was not met and blue circles showing days when it was met. The black horizontal bars in each group represent the mean time to fall asleep. On average, participants fell asleep slightly longer on days when the daily recommended activity goal was met.
+
+d. 
+```{r}
+# Creating summary table
+summary_table <- data %>%
+  group_by(met_goal) %>%
+  summarise(
+    mean_time_to_sleep = round(mean(time_to_sleep, na.rm = TRUE), 1),
+    n = n()
+  ) %>%
+  rename(
+    `Met Activity Goal` = met_goal,
+    `Mean Time to Fall Asleep (minutes)` = mean_time_to_sleep,
+    `Sample Size` = n
+  )
+
+# Generating GT table
+summary_table %>%
+  gt() %>%
+  tab_header(
+    title = "Average Time to Fall Asleep by Activity Goal Status"
+  )
+```
+
+Part 3: 
