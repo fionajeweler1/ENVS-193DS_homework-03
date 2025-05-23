@@ -46,7 +46,7 @@ ggplot(data, aes(x = met_goal, y = time_to_sleep, color = met_goal)) +
   geom_jitter(width = 0.15, size = 2, alpha = 0.8) +
   stat_summary(fun = mean, geom = "crossbar", width = 0.5,
                color = "black", fatten = 3, size = 0.6,
-               aes(ymin = after_stat(y), ymax = after_stat(y))) +  # Update deprecated ..y..
+               aes(ymin = after_stat(y), ymax = after_stat(y))) +  # updated for deprecation
   scale_color_manual(values = c("Yes" = "#3B9AB2", "No" = "#F21A00")) +
   labs(
     x = "Met Daily Recommended Activity Goal",
