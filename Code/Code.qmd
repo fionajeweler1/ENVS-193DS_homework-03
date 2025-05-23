@@ -53,5 +53,28 @@ ggplot(data, aes(x = met_goal, y = time_to_sleep, color = met_goal)) +
 ```
 
 c. 
-Figure 1. Faster sleep onset tends to occur on days when activity goals are met. Each red or blue dot represents a single day, with the red circles showing days when the activity goal was not met and blue circles showing days when it was met. The black horizontal bars in each group represent the mean time to fall asleep. On average, participants fell asleep slightly faster on days when the daily recommended activity goal was met.
+Figure 1. Faster sleep onset tends to occur on days when activity goals are met. Each red or blue dot represents a single day, with the red circles showing days when the activity goal was not met and blue circles showing days when it was met. The black horizontal bars in each group represent the mean time to fall asleep. On average, participants fell asleep slightly longer on days when the daily recommended activity goal was met.
+
+d. 
+```{r}
+# Creating summary table
+summary_table <- data %>%
+  group_by(met_goal) %>%
+  summarise(
+    mean_time_to_sleep = round(mean(time_to_sleep, na.rm = TRUE), 1),
+    n = n()
+  ) %>%
+  rename(
+    `Met Activity Goal` = met_goal,
+    `Mean Time to Fall Asleep (minutes)` = mean_time_to_sleep,
+    `Sample Size` = n
+  )
+
+# Generating GT table
+summary_table %>%
+  gt() %>%
+  tab_header(
+    title = "Average Time to Fall Asleep by Activity Goal Status"
+  )
+```
 
