@@ -1,16 +1,22 @@
 ---
 title: "ENVS 193DS Homework 3"
-format: html
+format:
+  html:
+    output-file: index.html
 ---
 
 Part 1: Set Up Tasks
 
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
 
+```{r}
 library(tidyverse)
 library(here)
 library(gt)
 library(janitor)
+library(readr)
+```
+
 
 Part 2: Problems 
 
@@ -78,3 +84,4 @@ summary_table %>%
   )
 ```
 
+Part 3: 
