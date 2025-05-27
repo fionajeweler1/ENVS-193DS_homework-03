@@ -146,3 +146,9 @@ My process involved importing personal sleep and activity data, normalizing slee
 Part 4:
 
 a. 
+The authors use multiple statistical tests, including Welch’s two-sample t-tests and General Linear Models (GLMs). Welch’s t-tests are used to compare mean parasite burdens (e.g., egg or oocyst counts) between groups such as juveniles vs. adults or July vs. October. GLMs are used to examine how parasite prevalence and intensity are influenced by multiple predictor variables including age class, sex, month of sampling, year, and land cover type. These tests help assess whether the observed differences in parasite burden are statistically significant and related to the authors’ key demographic and environmental factors.
+
+Figure 2 from Wait et al. (2023). Nematode and coccidia faecal egg/oocyst counts in raccoons by month (July vs. October) and age class (juvenile vs. adult). Boxplots show parasite intensity and variation across groups.
+![](critique.png)
+
+b. 
