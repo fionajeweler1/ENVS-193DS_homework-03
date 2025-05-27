@@ -91,4 +91,56 @@ Part 3:
 a. 
 An affective visualization of my personal data could use shifting colors to represent the relationship between my physical activity and how quickly I fall asleep. Each day could be shown as a vertical bar where the color intensity corresponds to the time it took me to fall asleep. Darker, cooler tones for longer onset times and lighter, warmer tones for faster sleep. Days when I met my activity goal could be marked with a subtle glow or overlay to distinguish them, creating a visual rhythm across the week. Instead of showing exact numbers, the color gradient would evoke the feeling of restfulness (or restlessness) throughout the month. The goal would be to communicate the emotional experience of my sleep patterns through color scheme. 
 
-b. okay
+b. 
+
+![](sketch.png)
+
+c.
+```{r}
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Sample data
+data <- data.frame(
+  Day = c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"),
+  Time_to_sleep = c(35, 20, 15, 25, 40, 18, 10),
+  Met_goal = c(TRUE, FALSE, TRUE, FALSE, FALSE, TRUE, TRUE)
+)
+
+# Normalize sleep time to control color lightness
+data <- data %>%
+  mutate(
+    norm_sleep = (Time_to_sleep - min(Time_to_sleep)) / (max(Time_to_sleep) - min(Time_to_sleep)),
+    fill_color = scales::col_numeric("Blues", domain = NULL)(1 - norm_sleep),
+    border_color = ifelse(Met_goal, "gold", "black")
+  )
+
+# Plot
+ggplot(data, aes(x = Day, y = 1, fill = fill_color)) +
+  geom_col(color = data$border_color, size = 1.5, show.legend = FALSE) +
+  scale_fill_identity() +
+  labs(
+    title = "Affective Visualization: Time to Fall Asleep and Activity Goal",
+    x = "Day of Week", y = NULL
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid = element_blank()
+  )
+```
+
+d.
+My affective visualization explores the relationship between physical activity and the time it takes me to fall asleep. Each day is represented as a bar with a color gradient: lighter blues indicate faster sleep onset, while darker blues represent longer delays. The gold border highlights days when I met my daily activity goal, and black borders mark days when I did not.
+
+This piece is influenced by affective visual artists like Jill Pelto, whose work transforms environmental data into emotionally resonant imagery. I was also inspired by the aesthetic simplicity of the “Dear Data” project by Posavec and Lupi, which communicates intimate, personal metrics through minimal visuals.
+
+The form of my work is a digital bar visualization created using R and the ggplot2 package. I chose this form to maintain both structure and emotion, using code to generate a color-based interpretation of how my body transitions into rest.
+
+My process involved importing personal sleep and activity data, normalizing sleep onset times, and mapping those values to a continuous blue color scale. I then used border colors to communicate goal completion. I intentionally omitted numeric values to keep the focus on feeling rather than analysis.
+
+Part 4:
+
+a. 
