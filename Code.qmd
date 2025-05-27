@@ -93,6 +93,8 @@ An affective visualization of my personal data could use shifting colors to repr
 
 b. 
 
+Here is a sketch representing the visual idea I described above.
+
 ![](sketch.png)
 
 c.
