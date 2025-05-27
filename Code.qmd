@@ -91,4 +91,4 @@ Part 3:
 a. 
 An affective visualization of my personal data could use shifting colors to represent the relationship between my physical activity and how quickly I fall asleep. Each day could be shown as a vertical bar where the color intensity corresponds to the time it took me to fall asleep. Darker, cooler tones for longer onset times and lighter, warmer tones for faster sleep. Days when I met my activity goal could be marked with a subtle glow or overlay to distinguish them, creating a visual rhythm across the week. Instead of showing exact numbers, the color gradient would evoke the feeling of restfulness (or restlessness) throughout the month. The goal would be to communicate the emotional experience of my sleep patterns through color scheme. 
 
-b. 
+b. okay
