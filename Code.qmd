@@ -152,3 +152,10 @@ Figure 2 from Wait et al. (2023). Nematode and coccidia faecal egg/oocyst counts
 ![](critique.png)
 
 b. 
+The authors very clearly represent their statistics in Figure 2. The x- and y-axes are logically labeled, and each boxplot includes both the summary statistics and the raw data points, which enhances transparency and interpretability. By showing individual data points alongside medians and spread, the figure makes patterns and variability easy to detect across seasons and age groups.
+
+c. 
+While the figure is effective overall, the tight spacing of the four boxplots makes the layout feel visually clustered. The use of many data points, combined with dense boxplot lines and colors, creates a low data:ink ratio, there’s a lot of visual “ink” relative to the amount of information being conveyed. This can make the figure feel clumpy and slightly overwhelming, especially on a first look.
+
+d. 
+To improve the clarity and overall impact of Figure 2, I would recommend increasing the spacing between the four panels to reduce visual clutter and give each subplot more breathing room. This would help the viewer focus on one comparison at a time without feeling overwhelmed. I would also consider using lighter or semi-transparent dots for the raw data points to prevent them from visually clumping and obscuring the boxplot structure. Additionally, it might be helpful to add labels directly to the panels indicating age class, rather than relying solely on axis labels, which can be easy to miss. Finally, simplifying the color scheme or using slightly more muted tones could reduce the figure’s overall intensity and improve readability without sacrificing information. These changes would enhance the figure’s effectiveness while maintaining the integrity of the data.
