@@ -1,21 +1,21 @@
 ---
 title: "ENVS 193DS Homework 3"
-author: "Fiona Jeweler"
-date: "05/27/2025"
+name: Fiona Jeweler
+date: 05/27/2025
 format:
   html:
     toc: true
     toc-location: left
-    toc-title: "Navigation"
-    embed-resources: true
     output-file: index.html
+    embed-resources: true
+output-dir: ../
 ---
 
 
 **Name:** Fiona Jeweler  
 **Date:** May 27, 2025
 
-##Part 1: Set Up Tasks
+## Part 1: Set Up Tasks
 
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
 
@@ -29,11 +29,11 @@ warning = FALSE
 ```
 
 
-##Part 2: Problems 
-###a. 
+## Part 2: Problems 
+### a. 
 To compare how quickly I fall asleep on days when I meet my recommended activity goal versus when I do not, I will calculate the mean time to fall asleep for each group ("Yes" vs. "No" under "Meet daily recommended activity goal"). This allows me to compare average sleep onset times between more and less active days. Comparing means is informative because if there is a noticeable difference, it could suggest a relationship between physical activity levels and how quickly I fall asleep.
 
-###b. 
+### b. 
 ```{r}
 warning = FALSE
 # Reading in data
@@ -70,10 +70,10 @@ ggplot(data, aes(x = met_goal, y = time_to_sleep, color = met_goal)) +
 
 ```
 
-###c. 
+### c. 
 Figure 1. Faster sleep onset tends to occur on days when activity goals are met. Each red or blue dot represents a single day, with the red circles showing days when the activity goal was not met and blue circles showing days when it was met. The black horizontal bars in each group represent the mean time to fall asleep. On average, participants fell asleep slightly longer on days when the daily recommended activity goal was met.
 
-###d. 
+### d. 
 ```{r}
 warning = FALSE
 # Creating summary table
@@ -97,18 +97,18 @@ summary_table %>%
   )
 ```
 
-##Part 3: Affective visualization
+## Part 3: Affective visualization
 
-###a. 
+### a. 
 An affective visualization of my personal data could use shifting colors to represent the relationship between my physical activity and how quickly I fall asleep. Each day could be shown as a vertical bar where the color intensity corresponds to the time it took me to fall asleep. Darker, cooler tones for longer onset times and lighter, warmer tones for faster sleep. Days when I met my activity goal could be marked with a subtle glow or overlay to distinguish them, creating a visual rhythm across the week. Instead of showing exact numbers, the color gradient would evoke the feeling of restfulness (or restlessness) throughout the month. The goal would be to communicate the emotional experience of my sleep patterns through color scheme. 
 
-###b. 
+### b. 
 
 Here is a sketch representing the visual idea I described above.
 
 ![](sketch.png)
 
-###c.
+### c.
 ```{r}
 # Load packages
 library(ggplot2)
@@ -146,7 +146,7 @@ ggplot(data, aes(x = Day, y = 1, fill = fill_color)) +
   )
 ```
 
-###d.
+### d.
 My affective visualization explores the relationship between physical activity and the time it takes me to fall asleep. Each day is represented as a bar with a color gradient: lighter blues indicate faster sleep onset, while darker blues represent longer delays. The gold border highlights days when I met my daily activity goal, and black borders mark days when I did not.
 
 This piece is influenced by affective visual artists like Jill Pelto, whose work transforms environmental data into emotionally resonant imagery. I was also inspired by the aesthetic simplicity of the “Dear Data” project by Posavec and Lupi, which communicates intimate, personal metrics through minimal visuals.
@@ -155,19 +155,19 @@ The form of my work is a digital bar visualization created using R and the ggplo
 
 My process involved importing personal sleep and activity data, normalizing sleep onset times, and mapping those values to a continuous blue color scale. I then used border colors to communicate goal completion. I intentionally omitted numeric values to keep the focus on feeling rather than analysis.
 
-##Part 4: Statistical critique
+## Part 4: Statistical critique
 
-###a. 
+### a. 
 The authors use multiple statistical tests, including Welch’s two-sample t-tests and General Linear Models (GLMs). Welch’s t-tests are used to compare mean parasite burdens (e.g., egg or oocyst counts) between groups such as juveniles vs. adults or July vs. October. GLMs are used to examine how parasite prevalence and intensity are influenced by multiple predictor variables including age class, sex, month of sampling, year, and land cover type. These tests help assess whether the observed differences in parasite burden are statistically significant and related to the authors’ key demographic and environmental factors.
 
 Figure 2 from Wait et al. (2023). Nematode and coccidia faecal egg/oocyst counts in raccoons by month (July vs. October) and age class (juvenile vs. adult). Boxplots show parasite intensity and variation across groups.
 ![](critique.png)
 
-###b. 
+### b. 
 The authors very clearly represent their statistics in Figure 2. The x- and y-axes are logically labeled, and each boxplot includes both the summary statistics and the raw data points, which enhances transparency and interpretability. By showing individual data points alongside medians and spread, the figure makes patterns and variability easy to detect across seasons and age groups.
 
-###c. 
+### c. 
 While the figure is effective overall, the tight spacing of the four boxplots makes the layout feel visually clustered. The use of many data points, combined with dense boxplot lines and colors, creates a low data:ink ratio, there’s a lot of visual “ink” relative to the amount of information being conveyed. This can make the figure feel clumpy and slightly overwhelming, especially on a first look.
 
-###d. 
+### d. 
 To improve the clarity and overall impact of Figure 2, I would recommend increasing the spacing between the four panels to reduce visual clutter and give each subplot more breathing room. This would help the viewer focus on one comparison at a time without feeling overwhelmed. I would also consider using lighter or semi-transparent dots for the raw data points to prevent them from visually clumping and obscuring the boxplot structure. Additionally, it might be helpful to add labels directly to the panels indicating age class, rather than relying solely on axis labels, which can be easy to miss. Finally, simplifying the color scheme or using slightly more muted tones could reduce the figure’s overall intensity and improve readability without sacrificing information. These changes would enhance the figure’s effectiveness while maintaining the integrity of the data.
