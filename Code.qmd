@@ -19,13 +19,20 @@ output-dir: ../
 
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
 
-```{r}
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+# Reading in packages 
 library(tidyverse)
 library(here)
 library(gt)
 library(janitor)
 library(readr)
-warning = FALSE
+
+#Reading in data
+data <- read_csv(here("data","Datasheet.csv"), col_names = TRUE)
+data <- read_csv(here("data","Datasheet.csv"), skip = 1)
+data <- read_csv(here("data","Datasheet.csv"), skip = 1) |> 
+  select(-1)
+
 ```
 
 
@@ -34,13 +41,7 @@ warning = FALSE
 To compare how quickly I fall asleep on days when I meet my recommended activity goal versus when I do not, I will calculate the mean time to fall asleep for each group ("Yes" vs. "No" under "Meet daily recommended activity goal"). This allows me to compare average sleep onset times between more and less active days. Comparing means is informative because if there is a noticeable difference, it could suggest a relationship between physical activity levels and how quickly I fall asleep.
 
 ### b. 
-```{r}
-warning = FALSE
-# Reading in data
-data <- read_csv(here("data","Datasheet.csv"), col_names = TRUE)
-data <- read_csv(here("data","Datasheet.csv"), skip = 1)
-data <- read_csv(here("data","Datasheet.csv"), skip = 1) |> 
-  select(-1)
+```{r, warning = FALSE}
 
 colnames(data)
 #Clean column names
@@ -75,7 +76,6 @@ Figure 1. Faster sleep onset tends to occur on days when activity goals are met.
 
 ### d. 
 ```{r}
-warning = FALSE
 # Creating summary table
 summary_table <- data %>%
   group_by(met_goal) %>%
@@ -110,10 +110,6 @@ Here is a sketch representing the visual idea I described above.
 
 ### c.
 ```{r}
-# Load packages
-library(ggplot2)
-library(dplyr)
-warning = FALSE
 
 # Sample data
 data <- data.frame(
