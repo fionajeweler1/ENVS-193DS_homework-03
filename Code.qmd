@@ -1,22 +1,21 @@
 ---
 title: "ENVS 193DS Homework 3"
-name: Fiona Jeweler
-date: 05/27/2025
+author: "Fiona Jeweler"
+date: "05/27/2025"
 format:
   html:
     toc: true
-    toc-depth: 2
-    number-sections: true
-    output-file: index.html
+    toc-location: left
+    toc-title: "Navigation"
     embed-resources: true
-output-dir: ../
+    output-file: index.html
 ---
 
 
 **Name:** Fiona Jeweler  
 **Date:** May 27, 2025
 
-Part 1: Set Up Tasks
+##Part 1: Set Up Tasks
 
 [Link to GitHub Repository](https://github.com/fionajeweler1/ENVS-193DS_homework-03)
 
@@ -30,7 +29,7 @@ warning = FALSE
 ```
 
 
-Part 2: Problems 
+##Part 2: Problems 
 
 a. To compare how quickly I fall asleep on days when I meet my recommended activity goal versus when I do not, I will calculate the mean time to fall asleep for each group ("Yes" vs. "No" under "Meet daily recommended activity goal"). This allows me to compare average sleep onset times between more and less active days. Comparing means is informative because if there is a noticeable difference, it could suggest a relationship between physical activity levels and how quickly I fall asleep.
 
@@ -98,7 +97,7 @@ summary_table %>%
   )
 ```
 
-Part 3: Affective visualization
+##Part 3: Affective visualization
 
 a. 
 An affective visualization of my personal data could use shifting colors to represent the relationship between my physical activity and how quickly I fall asleep. Each day could be shown as a vertical bar where the color intensity corresponds to the time it took me to fall asleep. Darker, cooler tones for longer onset times and lighter, warmer tones for faster sleep. Days when I met my activity goal could be marked with a subtle glow or overlay to distinguish them, creating a visual rhythm across the week. Instead of showing exact numbers, the color gradient would evoke the feeling of restfulness (or restlessness) throughout the month. The goal would be to communicate the emotional experience of my sleep patterns through color scheme. 
@@ -156,7 +155,7 @@ The form of my work is a digital bar visualization created using R and the ggplo
 
 My process involved importing personal sleep and activity data, normalizing sleep onset times, and mapping those values to a continuous blue color scale. I then used border colors to communicate goal completion. I intentionally omitted numeric values to keep the focus on feeling rather than analysis.
 
-Part 4: Statistical critique
+##Part 4: Statistical critique
 
 a. 
 The authors use multiple statistical tests, including Welch’s two-sample t-tests and General Linear Models (GLMs). Welch’s t-tests are used to compare mean parasite burdens (e.g., egg or oocyst counts) between groups such as juveniles vs. adults or July vs. October. GLMs are used to examine how parasite prevalence and intensity are influenced by multiple predictor variables including age class, sex, month of sampling, year, and land cover type. These tests help assess whether the observed differences in parasite burden are statistically significant and related to the authors’ key demographic and environmental factors.
